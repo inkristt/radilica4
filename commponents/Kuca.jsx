@@ -2,7 +2,9 @@ import React from 'react'
 
 const Kuca = () => {
   return (
-    <div> KURCINELI Proba </div>
+    <div className='glavni'>
+       KURCINELI Proba 
+      </div>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-
+import Header from './Header';
 
 const Lea = ({children}) => {
   return (
@@ -9,7 +9,7 @@ const Lea = ({children}) => {
             <title>Inkrist</title>
         </Head>
         <header>
-            header
+            <Header />
         </header>
         <div className='main'>
             {children}
