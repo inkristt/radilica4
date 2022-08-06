@@ -26,10 +26,14 @@ a {
     background: black;
   }
 }
+::-webkit-scrollbar{
+  display: none;
+}
 
 /* promenljive u css-u za sajt */
 :root{
-  --bg-color:#f8f8f8;
+  --bg-color:#080808;
+  --main-color:#d16309;
 }
 
 /* css za main */
@@ -73,7 +77,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: transparent;
+  color: white;
   padding: 0px 70px;
   height: 70px;
   width: 100vw;
@@ -85,6 +90,7 @@ a {
 }
 .meni{
   display: flex;
+  align-items: center;
   gap:20px
 }
 .meni-text{
@@ -99,7 +105,7 @@ a {
   width: 100%;
   transform: scaleX(0);
   height: 2.5px;
-  background-color: black;
+  background-color: var(--main-color);
   bottom: -5px;
   left: 0;
   transform-origin: bottom right;
@@ -109,8 +115,46 @@ a {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+.meni button{
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  background-color: transparent;
+  padding: 15px 50px;
+  margin: 0 auto;
+  box-shadow: var(--main-color) 2px 2px 22px;
+}
+.meni button span{
+  position: relative; 
+  z-index: 1;
+}
+.meni button::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 170%;
+  background: var(--main-color);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.meni button:hover:after{
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
 
 /*stajl za kucum*/
 .glavni{
   height: 100vh;
 }
+
