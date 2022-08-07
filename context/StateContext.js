@@ -3,12 +3,12 @@ import React, { createContext, useContext, useState } from 'react';
 const Context = createContext();
 
 export const StateContext = ({children}) => {
-    const [proba, setproba] = useState('')
+    const [pokaziMenu, setPokaziMenu] = useState(false)
   return (
     <Context.Provider
       value={{
-        proba,
-        setproba
+       pokaziMenu,
+       setPokaziMenu,
       }}
     >
       {children}
