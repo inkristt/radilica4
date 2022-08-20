@@ -27,6 +27,7 @@ const Baner = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
+        text-align:center;
         @media screen and (max-width:800px){
             font-size:70px;
         }
@@ -38,7 +39,7 @@ const FourHero = () => {
     <div>
         <Section>
             <Baner data-scroll data-scroll-direction='horizontal' data-scroll-speed='6' >
-                <span  >Puste druge</span>
+                <span  >Pusti druge</span>
             </Baner>
             <Baner data-scroll data-scroll-direction='horizontal' data-scroll-speed='-6'>
                 <span>da rade</span>
