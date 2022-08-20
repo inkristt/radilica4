@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps }) {
         options={
           {
             smooth: true,
-            // ... all available Locomotive Scroll instance options 
+            tablet: {
+              breakpoint: 0,    // <---- Fixes The Issue 🎉
+            }
           }
         }
         watch={

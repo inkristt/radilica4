@@ -5,16 +5,7 @@ import Footer from './Footer';
 
 
 const Lea = ({ children }) => {
-    const [bgblack, setbgblack] = useState(false)
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                setbgblack(true);
-            } else {
-                setbgblack(false);
-            }
-        });
-    }, [])
+
 
     return (
         <div>
@@ -22,7 +13,7 @@ const Lea = ({ children }) => {
                 <Head>
                     <title>Inkrist</title>
                 </Head>
-                <header className={bgblack ? "head bgblack" : 'head'}>
+                <header className='head'>
                     <Header />
                 </header>
                 <div className='main'>
