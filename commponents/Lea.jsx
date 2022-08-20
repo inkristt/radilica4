@@ -1,8 +1,10 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Header from './Header';
+import Footer from './Footer';
 
-const Lea = ({children}) => {
+
+const Lea = ({ children }) => {
     const [bgblack, setbgblack] = useState(false)
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -13,22 +15,23 @@ const Lea = ({children}) => {
             }
         });
     }, [])
-  return (
-    <div>
-        <Head>
-            <title>Inkrist</title>
-        </Head>
-        <header className={bgblack ? "head bgblack":'head'}>
-            <Header />
-        </header>
-        <div className='main'>
-            {children}
+
+    return (
+        <div>
+            <main >
+                <Head>
+                    <title>Inkrist</title>
+                </Head>
+                <header className={bgblack ? "head bgblack" : 'head'}>
+                    <Header />
+                </header>
+                <div className='main'>
+                    {children}
+                </div>
+            </main>
+
         </div>
-        <footer>
-            footer 
-        </footer>
-    </div>
-  )
+    )
 }
 
 export default Lea

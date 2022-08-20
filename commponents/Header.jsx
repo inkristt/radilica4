@@ -3,6 +3,9 @@ import React, { useRef } from 'react'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useStateContext } from '../context/StateContext'
+import Image from 'next/image'
+import Logo from '../assets/logobeo.svg'
+
 const Header = () => {
     const { pokaziMenu, setPokaziMenu } = useStateContext()
     return (
@@ -10,6 +13,7 @@ const Header = () => {
 
             <div className='heder-meni'>
                 <div className='logo'>
+                    <Image src={Logo} width='70' height='70' />
                     <p>Inkrist</p>
                 </div>
                 <div className='meni'>
@@ -31,13 +35,13 @@ const Header = () => {
                         <div className='fonlinkcont'>
                             <p onClick={() => setPokaziMenu(false)}><AiOutlineClose /></p>
                             <h3>Menu</h3>
-                            <Link href='/onama'>
+                            <Link href='#onama'>
                                 <p className='meni-text'>O nama</p>
                             </Link>
-                            <Link href='/usluge'>
+                            <Link href='#usluge'>
                                 <p className='meni-text'>Usluge</p>
                             </Link>
-                            <Link href='/nasi-radovi'>
+                            <Link href='#nasi-radovi'>
                                 <p className='meni-text'>Naši radovi</p>
                             </Link>
                             <Link href='/'>
