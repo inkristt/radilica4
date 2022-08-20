@@ -1,12 +1,12 @@
 import '../styles/globals.css'
 
-import React, { Children, useRef, useEffect,useState } from 'react'
+import React, { Children, useRef, useEffect, useState } from 'react'
 import { StateContext } from '../context/StateContext'
+import { motion, AnimatePresence } from 'framer-motion'
 import Lea from '../commponents/Lea'
 
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
-import { AnimatePresence } from 'framer-motion'
 import Loader from '../commponents/Loader'
 
 function MyApp({ Component, pageProps }) {
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       setloading(true)
     }, 3000);
   }, [])
-  
+
   const containerRef = useRef(null)
   return <StateContext>
     <Lea>
@@ -36,7 +36,10 @@ function MyApp({ Component, pageProps }) {
         }
         containerRef={containerRef}
       >
-        {loading ? null:<Loader />}
+        <AnimatePresence>
+          {loading ? null : <Loader />}
+        </AnimatePresence>
+
         <AnimatePresence>
           <main className='App' data-scroll-container ref={containerRef}>
             <Component {...pageProps} />
