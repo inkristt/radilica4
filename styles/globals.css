@@ -4,6 +4,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&display=swap');
 
 
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
 *,
 html,
 body {
@@ -27,12 +88,11 @@ a {
     color-scheme: dark;
   }
 
-  body {
-    color: white;
-    background: black;
-  }
+  
 }
-
+body {
+  background: black;
+}
 ::-webkit-scrollbar {
   display: none;
 }
@@ -40,6 +100,7 @@ a {
 /* promenljive u css-u za sajt */
 :root {
   --bg-color: #080808;
+  --black:rgba(255, 255, 255, 0.714);
   --main-color: #d16309;
 }
 .margintop{
@@ -78,6 +139,9 @@ a {
   align-items: center;
   background-color: white;
   padding: 0px 70px;
+}
+[data-scroll-container] {
+  perspective: 999999px !important;
 }
 
 .heder-info {

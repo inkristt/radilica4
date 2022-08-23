@@ -36,7 +36,7 @@ const Baner = styled.div`
 `
 const FourHero = () => {
   return (
-    <div>
+    <div id='section4'>
         <Section>
             <Baner data-scroll data-scroll-direction='horizontal' data-scroll-speed='6' >
                 <span  >Pusti druge</span>

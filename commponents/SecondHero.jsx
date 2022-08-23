@@ -33,21 +33,18 @@ span{
 
 const SecondHero = () => {
     return (
-        <div className='sc-main'>
+        <div className='sc-main' id='section2' >
             <Naslov data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
                 Polecemo
             </Naslov>        
             <H3>
                 <span>
-                Mi pokušavamo da iz svakog našeg klijnta izvučemo ono najbolje, kako bi mogao i on da bude ispred drugih. 
+                Mi pokušavamo da iz svakog našeg klijenta izvučemo ono najbolje, kako bi mogao i on da bude ispred drugih. 
                 U agresivnom svetu tehnologije moras da se izdvojis iz mase, te mi stupamo na scenu sa inovatnim idejama.
                 Pusti da drugi rade za tebe. 
                 </span> 
-
-            </H3>
-            
-            <div className='sc-relative'>
-            
+            </H3>            
+            <div className='sc-relative'>    
                 <div>
                     <motion.div
                         whileInView={{ translateY: '-140px' }}
@@ -57,14 +54,10 @@ const SecondHero = () => {
                         <Image src={rocket} width='500' height='500' />
                     </motion.div>
                 </div>
-
                 <div className="sc-crowd">
                     <Image src={crowd} width='500' height='500' />
                 </div>
             </div>
-          
-
-
         </div>
     )
 }
