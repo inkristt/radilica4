@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Logo from '../assets/logobeo.svg'
 import {motion,AnimatePresence} from 'framer-motion'
+
 const Container = styled(motion.div)`
     position:absolute;
     top:0;

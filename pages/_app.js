@@ -8,6 +8,7 @@ import Lea from '../commponents/Lea'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
 import Loader from '../commponents/Loader'
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
   const [loading, setloading] = useState(false)
@@ -18,37 +19,25 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   const containerRef = useRef(null)
+  const { route } = useRouter()
   return <StateContext>
-    <Lea>
-      <LocomotiveScrollProvider
-        options={
-          {
-            smooth: true,
-            tablet: {
-              breakpoint: 0,    // <---- Fixes The Issue 🎉
-            }
-          }
-        }
-        watch={
-          [
-            //..all the dependencies you want to watch to update the scroll.
-            //  Basicaly, you would want to watch page/location changes
-            //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-          ]
-        }
-        containerRef={containerRef}
-      >
+    <LocomotiveScrollProvider
+      options={{ smooth: true }}
+      watch={[route]}
+      containerRef={containerRef}
+    >
+      <Lea>
         <AnimatePresence>
           {loading ? null : <Loader />}
         </AnimatePresence>
-
         <AnimatePresence>
-          <main className='App' data-scroll-container ref={containerRef}>
+          <main data-scroll-container ref={containerRef}>
             <Component {...pageProps} />
           </main>
         </AnimatePresence>
-      </LocomotiveScrollProvider>
-    </Lea>
+      </Lea>
+    </LocomotiveScrollProvider>
+
   </StateContext>
 }
 

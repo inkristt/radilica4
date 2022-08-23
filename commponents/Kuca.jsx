@@ -26,7 +26,7 @@ const H4 = styled.h3`
 `
 const Kuca = () => {
   return (
-    <div className='glavni'>
+    <div className='glavni' >
       <div className='hero'>
         <Hero>
           <motion.div

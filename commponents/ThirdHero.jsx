@@ -83,7 +83,7 @@ div{
 const ThirdHero = () => {
 
   return (
-    <div>
+    <div id='section3'>
       <Section>
         <Title data-scroll data-scroll-speed='-1' > Dosadasnji poslovi </Title>
         <Left>
